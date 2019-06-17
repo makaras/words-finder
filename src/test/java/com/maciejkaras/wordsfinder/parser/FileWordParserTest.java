@@ -38,4 +38,16 @@ public class FileWordParserTest {
         //then
         assertEquals(fileWordParser.getWord(), "word");
     }
+
+    @Test
+    public void shouldIgnoreNumbers() {
+        //given
+        final String testWord = "0123456789";
+
+        //when
+        FileWordParser fileWordParser = new FileWordParser(testWord);
+
+        //then
+        assertEquals(fileWordParser.getWord(), "");
+    }
 }
