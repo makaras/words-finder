@@ -1,5 +1,6 @@
 package com.maciejkaras.wordsfinder.reader.directory.impl;
 
+import com.maciejkaras.wordsfinder.exception.UnreadableFileException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
@@ -19,7 +20,7 @@ public class TxtDirectoryReaderTest {
 
     private TxtDirectoryReader txtDirectoryReader = new TxtDirectoryReader();
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = UnreadableFileException.class)
     public void shouldThrowExceptionWhenWrongPathProvided() {
         //given
         File file = mock(File.class);

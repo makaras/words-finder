@@ -1,5 +1,6 @@
 package com.maciejkaras.wordsfinder.reader.directory.impl;
 
+import com.maciejkaras.wordsfinder.exception.UnreadableFileException;
 import com.maciejkaras.wordsfinder.parser.FileWordParser;
 
 import java.io.File;
@@ -26,7 +27,7 @@ class TxtFileReader {
                     .map(FileWordParser::getWord)
                     .collect(Collectors.toSet());
         } catch (IOException e) {
-            throw new IllegalArgumentException(FILE_NOT_READ_MESSAGE + e.getMessage());
+            throw new UnreadableFileException(FILE_NOT_READ_MESSAGE + e.getMessage());
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.maciejkaras.wordsfinder.reader.directory.impl;
 
+import com.maciejkaras.wordsfinder.exception.UnreadableFileException;
 import com.maciejkaras.wordsfinder.model.FileWords;
 import com.maciejkaras.wordsfinder.reader.directory.DirectoryReader;
 
@@ -34,7 +35,7 @@ public class TxtDirectoryReader implements DirectoryReader {
             validate(fileWords);
             return fileWords;
         } catch (IOException e) {
-            throw new IllegalArgumentException(FOLDER_NOT_READ_MESSAGE + e.getMessage());
+            throw new UnreadableFileException(FOLDER_NOT_READ_MESSAGE + e.getMessage());
         }
     }
 
