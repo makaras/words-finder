@@ -11,4 +11,5 @@ For example: 'java -jar words-finder-1.0-SNAPSHOT.jar \Users\Maciek\Documents\fi
 ## git commands
 
 git config user.name makaras
+
 git config user.email maciejkaras92@gmail.com
